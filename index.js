@@ -20,7 +20,10 @@ module.exports = {
 		sourceType: 'module',
 	},
 	extends: [ 'eslint:recommended' ],
-	plugins: [ 'import' ],
+	plugins: [
+		'filenames',
+		'import',
+	],
 
 	overrides: [ {
 		files: [ '*.test.js' ],
@@ -242,6 +245,9 @@ module.exports = {
 			'groups': [ 'builtin', 'external', 'parent', 'sibling', 'index' ],
 			'newlines-between': 'always',
 		} ],
+
+		'filenames/match-regex': [ 'error', '^[a-z\-]+$' ],
+		'filenames/no-index': 'error',
 
 		// warnings: used for things which sometimes can't be worked around / get in
 		//           the way of writing the code, but should really ideally be looked
