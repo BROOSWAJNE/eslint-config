@@ -20,7 +20,9 @@ module.exports = {
 		sourceType: 'module',
 	},
 	extends: [ 'eslint:recommended' ],
-	plugins: [ 'import' ],
+	plugins: [
+		'import',
+	],
 
 	overrides: [ {
 		files: [ '*.test.js' ],
@@ -28,6 +30,7 @@ module.exports = {
 	}, {
 		files: [ 'src/**/*' ],
 		env: { browser: true },
+		rules: { 'import/no-nodejs-modules': 'error' },
 	}, {
 		files: [ '*.script.js' ],
 		rules: { 'no-console': 'off' },
@@ -217,6 +220,23 @@ module.exports = {
 		'yield-star-spacing': 'error',
 		'yoda': [ 'error', 'never', {
 			'exceptRange': true,
+		} ],
+
+		// plugins
+
+		'import/default': 'error',
+		'import/export': 'error',
+		'import/extensions': [ 'error', 'ignorePackages' ],
+		'import/first': 'error',
+		'import/named': 'error',
+		'import/no-default-export': 'error',
+		'import/no-duplicates': 'error',
+		'import/no-named-as-default': 'error',
+		'import/no-namespace': 'error',
+		'import/no-unused-modules': 'error',
+		'import/order': [ 'error', {
+			'groups': [ 'builtin', 'external', 'parent', 'sibling', 'index' ],
+			'newlines-between': 'always',
 		} ],
 
 		// warnings: used for things which sometimes can't be worked around / get in
