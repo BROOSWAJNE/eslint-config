@@ -4,7 +4,8 @@
   "description": "batman's own linting preferences",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/BROOSWAJNE/eslint-config#readme",
   "peerDependencies": {
-	  "eslint": ">=7"
+    "eslint": "^7.21.0"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
