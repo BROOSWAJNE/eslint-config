@@ -20,13 +20,17 @@ module.exports = {
 		sourceType: 'module',
 	},
 	extends: [ 'eslint:recommended' ],
-	plugins: [
-		'import',
-	],
+	plugins: [ 'import' ],
 
 	overrides: [ {
 		files: [ '*.test.js' ],
 		env: { mocha: true },
+		plugins: [ 'mocha' ],
+		extends: [ 'plugin:mocha/recommended' ],
+		rules: {
+			'mocha/no-hooks': 'error',
+			'mocha/valid-test-description': 'error',
+		},
 	}, {
 		files: [ 'src/**/*' ],
 		env: { browser: true },

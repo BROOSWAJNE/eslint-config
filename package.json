@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "eslint": "*",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-mocha": "^8.1.0"
   }
 }
