@@ -1,3 +1,14 @@
+// arbitrarily chosen numbers for the refactoring warnings
+const MAX_COMPLEXITY = 50;
+const MAX_DEPTH = 5;
+const MAX_LENGTH = 100;
+const MAX_LINES = 1000;
+const MAX_LINES_PER_FUNC = 100;
+const MAX_NESTED_CALLBACKS = 3;
+const MAX_PARAMS = 3;
+const MAX_STATEMENTS = 20;
+const MAX_STATEMENTS_PER_LINE = 4;
+
 module.exports = {
 	root: true,
 	env: {
@@ -9,6 +20,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	extends: [ 'eslint:recommended' ],
+	plugins: [ 'import' ],
 
 	overrides: [ {
 		files: [ '*.test.js' ],
@@ -28,9 +40,7 @@ module.exports = {
 		'accessor-pairs': [ 'error', {
 			'enforceForClassMembers': true,
 		} ],
-		'array-bracket-newline': [ 'error', {
-			'multiline': true,
-		} ],
+		'array-bracket-newline': [ 'error', 'consistent' ],
 		'array-bracket-spacing': [ 'error', 'always' ],
 		'array-callback-return': 'error',
 		'arrow-body-style': [ 'error', 'as-needed' ],
@@ -65,7 +75,7 @@ module.exports = {
 			'allowArrowFunctions': true,
 		} ],
 		'function-call-argument-newline': [ 'error', 'consistent' ],
-		'function-parent-newline': [ 'error', 'multiline' ],
+		'function-paren-newline': [ 'error', 'multiline' ],
 		'generator-star-spacing': [ 'error', 'after' ],
 		'grouped-accessor-pairs': 'error',
 		'handle-callback-err': 'error',
@@ -123,30 +133,31 @@ module.exports = {
 		'no-undef-init': 'error',
 		'no-unmodified-loop-condition': 'error',
 		'no-unneeded-ternary': 'error',
+		'no-unreachable-loop': 'error',
+		'no-unsafe-optional-chaining': 'error',
 		'no-unused-expressions': [ 'error', {
 			'allowTaggedTemplates': true,
 		} ],
-		'no-useless-call': 'error',
-		'no-useless-computed-key': [ 'error', {
-			'enforceForClassMembers': true,
-		} ],
-		'no-useless-constructor': 'error',
-		'no-useless-rename': 'error',
-		'no-unreachable-loop': 'error',
-		'no-unsafe-optional-chaining': 'error',
 		'no-unused-vars': [ 'error', {
 			'args': 'none',
 			'ignoreRestSiblings': true,
 		} ],
 		'no-useless-backreference': 'error',
 		'no-useless-call': 'error',
+		'no-useless-computed-key': [ 'error', {
+			'enforceForClassMembers': true,
+		} ],
 		'no-useless-concat': 'error',
+		'no-useless-constructor': 'error',
+		'no-useless-rename': 'error',
 		'no-useless-return': 'error',
 		'no-var': 'error',
 		'no-whitespace-before-property': 'error',
 		'nonblock-statement-body-position': [ 'error', 'beside' ],
 		'object-curly-spacing': [ 'error', 'always' ],
-		'object-curly-newline': [ 'error', 'consistent' ],
+		'object-curly-newline': [ 'error', {
+			'consistent': true,
+		} ],
 		'object-property-newline': [ 'error', {
 			'allowAllPropertiesOnSameLine': true,
 		} ],
@@ -212,16 +223,16 @@ module.exports = {
 		//           the way of writing the code, but should really ideally be looked
 		//           at and refactored in the long term
 
-		'complexity': [ 'warn', 50 ],
+		'complexity': [ 'warn', MAX_COMPLEXITY ],
 		'func-names': [ 'warn', 'always' ],
-		'max-depth': [ 'warn', 5 ],
-		'max-len': [ 'warn', { 'code': 80 } ],
-		'max-lines': [ 'warn', 1000 ],
-		'max-lines-per-function': [ 'warn', 100 ],
-		'max-nested-callbacks': [ 'warn', 3 ],
-		'max-params': [ 'warn', 3 ],
-		'max-statements': [ 'warn', 20 ],
-		'max-statements-per-line': [ 'warn', 4 ],
+		'max-depth': [ 'warn', MAX_DEPTH ],
+		'max-len': [ 'warn', { 'code': MAX_LENGTH } ],
+		'max-lines': [ 'warn', MAX_LINES ],
+		'max-lines-per-function': [ 'warn', MAX_LINES_PER_FUNC ],
+		'max-nested-callbacks': [ 'warn', MAX_NESTED_CALLBACKS ],
+		'max-params': [ 'warn', MAX_PARAMS ],
+		'max-statements': [ 'warn', MAX_STATEMENTS ],
+		'max-statements-per-line': [ 'warn', { 'max': MAX_STATEMENTS_PER_LINE } ],
 		'no-magic-numbers': 'warn',
 
 	},
