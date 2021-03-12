@@ -1,0 +1,26 @@
+{
+  "name": "@brooswajne/eslint-config",
+  "version": "1.0.0",
+  "description": "batman's own linting preferences",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BROOSWAJNE/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "Willem Garnier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BROOSWAJNE/eslint-config/issues"
+  },
+  "homepage": "https://github.com/BROOSWAJNE/eslint-config#readme",
+  "peerDependencies": {
+	  "eslint": ">=7"
+  }
+}
