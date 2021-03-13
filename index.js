@@ -1,3 +1,5 @@
+/* eslint-disable filenames/no-index */
+
 // arbitrarily chosen numbers for the refactoring warnings
 const MAX_COMPLEXITY = 50;
 const MAX_DEPTH = 5;
@@ -23,6 +25,7 @@ module.exports = {
 	plugins: [
 		'filenames',
 		'import',
+		'unicorn',
 	],
 
 	overrides: [ {
@@ -116,7 +119,6 @@ module.exports = {
 		'no-iterator': 'error',
 		'no-label-var': 'error',
 		'no-lone-blocks': 'error',
-		'no-lonely-if': 'error',
 		'no-loop-func': 'error',
 		'no-loss-of-precision': 'error',
 		'no-mixed-operators': 'error',
@@ -246,8 +248,41 @@ module.exports = {
 			'newlines-between': 'always',
 		} ],
 
-		'filenames/match-regex': [ 'error', '^[a-z\-]+$' ],
+		'filenames/match-regex': [ 'error', '^\\.?[a-z\\-]+$' ],
 		'filenames/no-index': 'error',
+
+		'unicorn/better-regex': 'error',
+		'unicorn/catch-error-name': [ 'error', {
+			'name': 'err',
+		} ],
+		'unicorn/consistent-destructuring': 'error',
+		'unicorn/consistent-function-scoping': 'error',
+		'unicorn/custom-error-definition': 'error',
+		'unicorn/error-message': 'error',
+		'unicorn/expiring-todo-comments': [ 'error', {
+			'allowWarningComments': true,
+		} ],
+		'unicorn/no-abusive-eslint-disable': 'error',
+		'unicorn/no-array-for-each': 'error',
+		'unicorn/no-array-push-push': 'error',
+		'unicorn/no-array-reduce': 'error',
+		'unicorn/no-instanceof-array': 'error',
+		'unicorn/no-lonely-if': 'error',
+		'unicorn/no-object-as-default-parameter': 'error',
+		'unicorn/no-process-exit': 'error',
+		'unicorn/no-unused-properties': 'error',
+		'unicorn/prefer-array-some': 'error',
+		'unicorn/prefer-date-now': 'error',
+		'unicorn/prefer-default-parameters': 'error',
+		'unicorn/prefer-includes': 'error',
+		'unicorn/prefer-number-properties': [ 'error', {
+			'checkInfinity': false,
+		} ],
+		'unicorn/prefer-regexp-test': 'error',
+		'unicorn/prefer-string-slice': 'error',
+		'unicorn/prefer-string-starts-ends-with': 'error',
+		'unicorn/prefer-type-error': 'error',
+		'unicorn/throw-new-error': 'error',
 
 		// warnings: used for things which sometimes can't be worked around / get in
 		//           the way of writing the code, but should really ideally be looked
@@ -264,6 +299,7 @@ module.exports = {
 		'max-statements': [ 'warn', MAX_STATEMENTS ],
 		'max-statements-per-line': [ 'warn', { 'max': MAX_STATEMENTS_PER_LINE } ],
 		'no-magic-numbers': 'warn',
+		'no-warning-comments': 'warn',
 
 	},
 };
