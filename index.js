@@ -42,7 +42,10 @@ module.exports = {
 		rules: { 'import/no-nodejs-modules': 'error' },
 	}, {
 		files: [ '*.script.js' ],
-		rules: { 'no-console': 'off' },
+		rules: {
+			'no-console': 'off',
+			'no-process-exit': 'off',
+		},
 	} ],
 
 	rules: {
@@ -132,6 +135,7 @@ module.exports = {
 		'no-nonoctal-decimal-escape': 'error',
 		'no-octal-escape': 'error',
 		'no-path-concat': 'error',
+		'no-process-exit': 'error',
 		'no-promise-executor-return': 'error',
 		'no-proto': 'error',
 		'no-return-assign': [ 'error', 'except-parens' ],
@@ -268,7 +272,6 @@ module.exports = {
 		'unicorn/no-instanceof-array': 'error',
 		'unicorn/no-lonely-if': 'error',
 		'unicorn/no-object-as-default-parameter': 'error',
-		'unicorn/no-process-exit': 'error',
 		'unicorn/no-unused-properties': 'error',
 		'unicorn/prefer-array-some': 'error',
 		'unicorn/prefer-date-now': 'error',
