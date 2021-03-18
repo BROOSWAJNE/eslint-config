@@ -251,7 +251,7 @@ module.exports = {
 			'newlines-between': 'always',
 		} ],
 
-		'filenames/match-regex': [ 'error', '^\\.?[a-z\\-]+$' ],
+		'filenames/match-regex': [ 'error', '^[a-z\\-.]+$' ],
 		'filenames/no-index': 'error',
 
 		'unicorn/better-regex': 'error',
