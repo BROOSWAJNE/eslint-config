@@ -300,7 +300,9 @@ module.exports = {
 		'max-params': [ 'warn', MAX_PARAMS ],
 		'max-statements': [ 'warn', MAX_STATEMENTS ],
 		'max-statements-per-line': [ 'warn', { 'max': MAX_STATEMENTS_PER_LINE } ],
-		'no-magic-numbers': 'warn',
+		'no-magic-numbers': [ 'warn', {
+			'ignore': [ -1, 0, 1, 2 ],
+		} ],
 		'no-warning-comments': 'warn',
 
 	},
