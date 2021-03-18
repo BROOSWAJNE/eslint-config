@@ -12,7 +12,6 @@ const MAX_STATEMENTS = 20;
 const MAX_STATEMENTS_PER_LINE = 4;
 
 module.exports = {
-	root: true,
 	env: {
 		node: true,
 		es6: true,
