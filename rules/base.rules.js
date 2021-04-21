@@ -15,8 +15,8 @@ module.exports = {
 	'camelcase': 'error',
 	'class-methods-use-this': 'error',
 	'comma-dangle': [ 'error', 'always-multiline' ],
-	'comma-style': [ 'error', 'last' ],
 	'comma-spacing': [ 'error' ],
+	'comma-style': [ 'error', 'last' ],
 	'computed-property-spacing': [ 'error', 'always', {
 		'enforceForClassMembers': true,
 	} ],
@@ -116,10 +116,10 @@ module.exports = {
 	'no-var': 'error',
 	'no-whitespace-before-property': 'error',
 	'nonblock-statement-body-position': [ 'error', 'beside' ],
-	'object-curly-spacing': [ 'error', 'always' ],
 	'object-curly-newline': [ 'error', {
 		'consistent': true,
 	} ],
+	'object-curly-spacing': [ 'error', 'always' ],
 	'object-property-newline': [ 'error', {
 		'allowAllPropertiesOnSameLine': true,
 	} ],
@@ -135,28 +135,28 @@ module.exports = {
 	'quote-props': [ 'error', 'consistent' ],
 	'quotes': [ 'error', 'single' ],
 	'radix': 'error',
-	'rest-spread-spacing': [ 'error', 'never' ],
 	'require-atomic-updates': 'error',
+	'rest-spread-spacing': [ 'error', 'never' ],
 	'semi': [ 'error', 'always' ],
 	'semi-spacing': 'error',
 	'semi-style': [ 'error', 'last' ],
 	'sort-imports': [ 'error', {
-		'memberSyntaxSortOrder': [ 'none', 'multiple', 'single', 'all' ],
 		'allowSeparatedGroups': true,
+		'memberSyntaxSortOrder': [ 'none', 'multiple', 'single', 'all' ],
 	} ],
 	'space-before-blocks': 'error',
 	'space-before-function-paren': [ 'error', {
 		'anonymous': 'never',
-		'named': 'never',
 		'asyncArrow': 'always',
+		'named': 'never',
 	} ],
 	'space-in-parens': [ 'error', 'never', {
 		'exceptions': [ 'empty' ],
 	} ],
 	'space-infix-ops': 'error',
 	'space-unary-ops': [ 'error', {
-		'words': true,
 		'nonwords': false,
+		'words': true,
 	} ],
 	'spaced-comment': 'error',
 	'switch-colon-spacing': [ 'error', {
@@ -167,8 +167,8 @@ module.exports = {
 	'template-curly-spacing': [ 'error', 'never' ],
 	'template-tag-spacing': [ 'error', 'never' ],
 	'use-isnan': [ 'error', {
-		'enforceForSwitchCase': true,
 		'enforceForIndexOf': true,
+		'enforceForSwitchCase': true,
 	} ],
 	'valid-typeof': [ 'error', {
 		'requireStringLiterals': true,
