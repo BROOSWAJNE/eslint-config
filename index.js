@@ -35,10 +35,6 @@ module.exports = {
 			'mocha/valid-test-description': 'error',
 		},
 	}, {
-		files: [ 'src/**/*' ],
-		env: { browser: true },
-		rules: { 'import/no-nodejs-modules': 'error' },
-	}, {
 		files: [ '*.script.js' ],
 		rules: {
 			'no-console': 'off',
