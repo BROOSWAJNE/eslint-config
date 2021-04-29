@@ -1,4 +1,5 @@
 module.exports = {
+
 	'accessor-pairs': [ 'error', {
 		'enforceForClassMembers': true,
 	} ],
@@ -180,4 +181,5 @@ module.exports = {
 	'yoda': [ 'error', 'never', {
 		'exceptRange': true,
 	} ],
+
 };
