@@ -38,7 +38,7 @@ module.exports = {
 		'allowArrowFunctions': true,
 	} ],
 	'function-call-argument-newline': [ 'error', 'consistent' ],
-	'function-paren-newline': [ 'error', 'multiline' ],
+	'function-paren-newline': [ 'error', 'consistent' ],
 	'generator-star-spacing': [ 'error', 'after' ],
 	'grouped-accessor-pairs': 'error',
 	'handle-callback-err': 'error',
