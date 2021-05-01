@@ -34,6 +34,9 @@ module.exports = {
 		rules: {
 			'mocha/no-hooks': 'error',
 			'mocha/valid-test-description': 'error',
+			// Warnings
+			'mocha/max-top-level-suites': 'warn',
+			'mocha/no-exports': 'warn',
 		},
 	}, {
 		files: [ '*.script.js' ],
