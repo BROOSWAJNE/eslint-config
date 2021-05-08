@@ -6,4 +6,6 @@ module.exports = {
 		rules: { 'sort-keys': 'error' },
 	} ],
 
+	rules: { 'import/no-commonjs': 'off' },
+
 };

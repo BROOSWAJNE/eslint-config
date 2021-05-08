@@ -1,15 +1,19 @@
 /* eslint-disable filenames/no-index -- Required by ESLint */
 
-const RULES_BASE = require('./rules/base.rules.js');
-const RULES_WARNINGS = require('./rules/warnings.rules.js');
-const RULES_PLUGINS = {
-	...require('./rules/eslint-comments.plugin.rules.js'),
-	...require('./rules/filenames.plugin.rules.js'),
-	...require('./rules/import.plugin.rules.js'),
-	...require('./rules/unicorn.plugin.rules.js'),
+const base = require('./rules/eslint.js');
+
+const plugins = {
+	'eslint-comments': require('./rules/eslint-comments.js'),
+	'filenames': require('./rules/filenames.js'),
+	'import': require('./rules/import.js'),
+	'unicorn': require('./rules/unicorn.js'),
 };
 
+const rules = { ...base };
+for (const plugin in plugins) Object.assign(rules, plugins[ plugin ]);
+
 module.exports = {
+
 	env: {
 		node: true,
 		es6: true,
@@ -19,37 +23,17 @@ module.exports = {
 		sourceType: 'module',
 	},
 	extends: [ 'eslint:recommended' ],
-	plugins: [
-		'eslint-comments',
-		'filenames',
-		'import',
-		'unicorn',
-	],
+	plugins: Object.keys(plugins),
 
 	overrides: [ {
 		files: [ '*.test.js' ],
-		env: { mocha: true },
-		plugins: [ 'mocha' ],
-		extends: [ 'plugin:mocha/recommended' ],
-		rules: {
-			'mocha/no-hooks': 'error',
-			'mocha/valid-test-description': 'error',
-			// Warnings
-			'mocha/max-top-level-suites': 'warn',
-			'mocha/no-exports': 'warn',
-		},
+		...require('./overrides/mocha.js'),
 	}, {
 		files: [ '*.script.js' ],
-		rules: {
-			'no-console': 'off',
-			'no-process-exit': 'off',
-		},
+		...require('./overrides/scripts.js'),
 	} ],
 
 	reportUnusedDisableDirectives: true,
-	rules: {
-		...RULES_BASE,
-		...RULES_WARNINGS,
-		...RULES_PLUGINS,
-	},
+	rules: rules,
+
 };

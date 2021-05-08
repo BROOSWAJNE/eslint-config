@@ -1,3 +1,8 @@
+const rules = require('./rules/typescript.js');
+
+// TODO: create a typescript-full config, with rules requiring type checking for ci
+// https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+
 module.exports = {
 
 	parser: '@typescript-eslint/parser',
@@ -6,23 +11,14 @@ module.exports = {
 	extends: [
 		'./index.js',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:import/typescript',
 	],
 
 	overrides: [ {
 		files: [ '*.test.ts' ],
-		// TODO: share with mocha from index.js in some way
-		env: { mocha: true },
-		plugins: [ 'mocha' ],
-		extends: [ 'plugin:mocha/recommended' ],
-		rules: {
-			'mocha/no-hooks': 'error',
-			'mocha/valid-test-description': 'error',
-			// Warnings
-			'mocha/max-top-level-suites': 'warn',
-			'mocha/no-exports': 'warn',
-		},
+		...require('./overrides/mocha.js'),
 	} ],
 
-	// TODO: figure out which TS rules i care about
+	rules: rules,
 
 };
