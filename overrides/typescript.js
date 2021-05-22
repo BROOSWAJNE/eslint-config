@@ -14,11 +14,6 @@ module.exports = {
 		'plugin:import/typescript',
 	],
 
-	overrides: [ {
-		files: [ '*.test.ts' ],
-		extends: [ './mocha.js' ],
-	} ],
-
 	rules: rules,
 
 };
