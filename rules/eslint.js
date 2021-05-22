@@ -125,7 +125,6 @@ const errors = {
 	'no-octal-escape': 'error',
 	'no-path-concat': 'error',
 	'no-process-exit': 'error',
-	'no-promise-executor-return': 'error',
 	'no-proto': 'error',
 	'no-return-assign': [ 'error', 'except-parens' ],
 	'no-return-await': 'error',

@@ -1,5 +1,10 @@
 const base = require('./eslint.js');
 
+const disables = {
+	// now redundant as this is already checked by typescript
+	'consistent-return': 'off',
+};
+
 /** See https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#extension-rules */
 const replacements = { };
 for (const rule of [
@@ -101,4 +106,9 @@ const errors = {
 
 };
 
-module.exports = { ...replacements, ...warnings, ...errors };
+module.exports = {
+	...disables,
+	...replacements,
+	...warnings,
+	...errors,
+};
