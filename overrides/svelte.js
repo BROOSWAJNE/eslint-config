@@ -1,4 +1,4 @@
-const { FILENAME_PATTERN } = require('../shared/constants.js');
+const { FILENAME_REGEX } = require('../shared/constants.js');
 
 /** Overrides for a svelte environment. */
 module.exports = {
@@ -8,12 +8,12 @@ module.exports = {
 
 	extends: [ './browser.js' ],
 	rules: {
-		'filenames/match-regex': [ 'error', [
-			// allow PascalCase for svelte components (requires at least one lowercase char)
+		'filename-rules/match': [ 'error', new RegExp([
+			// allow PascalCase for svelte components (requiring at least one lowercase char)
 			/^[A-Z]+[a-z]+[A-Za-z]+\.svelte$/.source,
-			// otherwise just standard filename pattern
-			FILENAME_PATTERN,
-		].join('|') ],
+			// but also allows standard kebab-case
+			FILENAME_REGEX.source,
+		].join('|')) ],
 
 		// doesn't currently work correctly with svelte
 		'import/first': 'off',
