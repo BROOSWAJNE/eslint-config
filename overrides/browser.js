@@ -1,6 +1,6 @@
+/** Overrides for a browser environment. */
 module.exports = {
 
-	extends: [ './index.js' ],
 	env: {
 		browser: true,
 		node: false,

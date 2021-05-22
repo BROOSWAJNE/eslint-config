@@ -1,4 +1,4 @@
-/** Overrides for a mocha environment. */
+/** Overrides for a mocha testing environment. */
 module.exports = {
 
 	env: { mocha: true },

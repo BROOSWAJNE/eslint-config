@@ -25,14 +25,6 @@ module.exports = {
 	extends: [ 'eslint:recommended' ],
 	plugins: Object.keys(plugins),
 
-	overrides: [ {
-		files: [ '*.test.js' ],
-		...require('./overrides/mocha.js'),
-	}, {
-		files: [ '*.script.js' ],
-		...require('./overrides/scripts.js'),
-	} ],
-
 	reportUnusedDisableDirectives: true,
 	rules: rules,
 
