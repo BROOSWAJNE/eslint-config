@@ -17,6 +17,9 @@ module.exports = {
 
 		// doesn't currently work correctly with svelte
 		'import/first': 'off',
+		// needed for props
+		'init-declarations': 'off',
+		'@typescript-eslint/init-declarations': 'off',
 	},
 
 };
