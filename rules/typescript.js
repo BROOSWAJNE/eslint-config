@@ -73,11 +73,9 @@ const errors = {
 	} ],
 	'@typescript-eslint/class-literal-property-style': [ 'error', 'fields' ],
 	'@typescript-eslint/consistent-indexed-object-style': [ 'error', 'index-signature' ],
-	'@typescript-eslint/consistent-type-assertions': [ 'error', {
-		// TODO: should this be `never`, and therefore require an explicit eslint-disable which
-		//       explains the reason for the assertion being necessary?
-		'assertionStyle': 'as',
-		'objectLiteralTypeAssertions': 'allow-as-parameter',
+	'@typescript-eslint/consistent-type-assertions': [ 'warn', {
+		// require an explicit eslint-disable with explanation for assertions
+		'assertionStyle': 'never',
 	} ],
 	'@typescript-eslint/consistent-type-definitions': [ 'error', 'interface' ],
 	'@typescript-eslint/consistent-type-imports': [ 'error', {
