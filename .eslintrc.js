@@ -1,11 +1,11 @@
 module.exports = {
 
-	extends: [ './index.js' ],
+	extends: [ "./index.js" ],
 	overrides: [ {
-		files: [ '*.rules.js' ],
-		rules: { 'sort-keys': 'error' },
+		files: [ "*.rules.js" ],
+		rules: { "sort-keys": "error" },
 	} ],
 
-	rules: { 'import/no-commonjs': 'off' },
+	rules: { "import/no-commonjs": "off" },
 
 };

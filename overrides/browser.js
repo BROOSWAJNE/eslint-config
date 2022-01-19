@@ -6,6 +6,6 @@ module.exports = {
 		node: false,
 	},
 
-	rules: { 'import/no-nodejs-modules': 'error' },
+	rules: { "import/no-nodejs-modules": "error" },
 
 };

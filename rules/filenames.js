@@ -1,3 +1,3 @@
 module.exports = {
-	'filenames/no-index': 'error',
+	"filenames/no-index": "error",
 };

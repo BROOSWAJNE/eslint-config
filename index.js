@@ -1,13 +1,13 @@
 /* eslint-disable filenames/no-index -- Required by ESLint */
 
-const base = require('./rules/eslint.js');
+const base = require("./rules/eslint.js");
 
 const plugins = {
-	'eslint-comments': require('./rules/eslint-comments.js'),
-	'filename-rules': require('./rules/filename-rules'),
-	'filenames': require('./rules/filenames.js'),
-	'import': require('./rules/import.js'),
-	'unicorn': require('./rules/unicorn.js'),
+	"eslint-comments": require("./rules/eslint-comments.js"),
+	"filename-rules": require("./rules/filename-rules"),
+	"filenames": require("./rules/filenames.js"),
+	"import": require("./rules/import.js"),
+	"unicorn": require("./rules/unicorn.js"),
 };
 
 const rules = { ...base };
@@ -21,9 +21,9 @@ module.exports = {
 	},
 	parserOptions: {
 		ecmaVersion: 2021,
-		sourceType: 'module',
+		sourceType: "module",
 	},
-	extends: [ 'eslint:recommended' ],
+	extends: [ "eslint:recommended" ],
 	plugins: Object.keys(plugins),
 
 	reportUnusedDisableDirectives: true,
