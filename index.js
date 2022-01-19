@@ -4,7 +4,7 @@ const base = require("./rules/eslint.js");
 
 const plugins = {
 	"eslint-comments": require("./rules/eslint-comments.js"),
-	"filename-rules": require("./rules/filename-rules"),
+	"filename-rules": require("./rules/filename-rules.js"),
 	"filenames": require("./rules/filenames.js"),
 	"import": require("./rules/import.js"),
 	"unicorn": require("./rules/unicorn.js"),
